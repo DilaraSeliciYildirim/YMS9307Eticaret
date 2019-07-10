@@ -88,6 +88,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\blank-page.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\bootstrap-elements.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\bootstrap-grid.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\charts.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\bootstrap-rtl.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\bootstrap-rtl.min.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\bootstrap.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\bootstrap.min.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\plugins\morris.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\sb-admin-rtl.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\sb-admin.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\forms.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\index-rtl.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\index.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\bootstrap.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\bootstrap.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\jquery.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\excanvas.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\flot-data.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\morris-data.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\morris.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\morris.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\raphael.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\tables.html" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -100,6 +132,42 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\core.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\icons.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\larger.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\list.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\mixins.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\path.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\spinning.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\stacked.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\variables.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_core.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_list.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_path.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_spinning.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\LICENSE" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\README.md" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
