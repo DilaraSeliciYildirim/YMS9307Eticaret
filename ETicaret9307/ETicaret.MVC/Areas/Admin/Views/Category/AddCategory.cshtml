@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddCategory</h2>
+<div>
+    <label> @ViewBag.basarili </label>
+</div>
+<form action="~/Admin/Category/AddCategory" method="post">
+    <div style="width:300px">
+        <label>Category Name:</label>
+        <input type="text" name="CategoryName" placeholder="enter category name" class="form-control" />
+    </div>
+    <div style="width:300px">
+        <label> Description:</label>
+        <input type="text" name="Description" placeholder="enter Description" class="form-control" />
+    </div>
+    <div>
+        <br />
+        <button class="btn btn-primary" type="submit"> Add Category</button>
+    </div>
+</form>

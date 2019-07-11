@@ -8,7 +8,7 @@ using ETicaret.Entity;
 
 namespace ETicaret.Repository
 {
-    class CategoryRepository : DataRepository<Category, Guid>
+    public class CategoryRepository : DataRepository<Category, Guid>
     {
         static ECommerceEntities db = Tool.GetConnection();
         ResultProcess<Category> result = new ResultProcess<Category>();
@@ -29,6 +29,7 @@ namespace ETicaret.Repository
         public override Result<int> Insert(Category item)
         {
             Category yeni = db.Categories.Create();
+            yeni.CategoryId = Guid.NewGuid();
             yeni.CategoryName = item.CategoryName;
             yeni.CreatedDate = DateTime.Now;
             yeni.Description = item.Description;
