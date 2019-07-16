@@ -1,0 +1,23 @@
+﻿@using ETicaret.Entity
+@model Category
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Category</h2>
+<div class="text-info">
+    @ViewBag.mesaj
+</div>
+<form action="~/Admin/Category/EditCategory" method="post">
+    <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+    <div style="width:300px">
+        Category Name:
+        <input type="text" name="CategoryName" value="@Model.CategoryName" class="form-control" />
+    </div>
+    <div style="width:300px">
+        Description:
+        <input type="text" name="Description" value="@Model.Description" class="form-control"/>
+    </div>
+    <button class="btn btn-primary" type="submit"> Update </button>
+</form>

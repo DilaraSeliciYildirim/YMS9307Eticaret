@@ -20,9 +20,10 @@ namespace ETicaret.MVC.Areas.Admin.Controllers
         InstanceResult<Category> result = new InstanceResult<Category>();
 
         // GET: Admin/Category
-        public ActionResult List()
+        public ActionResult List(string mesaj)
         {
             result.resultList = cr.List();
+            ViewBag.silme = mesaj;
             return View(result.resultList.ProcessResult);
         }
 
@@ -38,6 +39,27 @@ namespace ETicaret.MVC.Areas.Admin.Controllers
             result.resultint = cr.Insert(model);
             ViewBag.basarili = result.resultint.UserMessage;
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditCategory(Guid id)
+        {
+            result.resultT = cr.GetObjById(id);
+            return View(result.resultT.ProcessResult);
+        }
+
+        [HttpPost]
+        public ActionResult EditCategory(Category model)
+        {
+            result.resultint = cr.Update(model);
+            ViewBag.mesaj = result.resultint.UserMessage;
+            return View(model);
+        }
+
+        public ActionResult DeleteCategory(Guid id)
+        {
+            result.resultint = cr.Delete(id);
+            return RedirectToAction("List", new { @mesaj = result.resultint.UserMessage });
         }
     }
 }

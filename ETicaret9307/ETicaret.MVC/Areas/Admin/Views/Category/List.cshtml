@@ -6,6 +6,9 @@
 }
 
 <h2> Category List</h2>
+<div class="text-info">
+    @ViewBag.silme
+</div>
 <table class="table table-condensed table-hover">
     <thead>
         <tr>
@@ -23,8 +26,8 @@
                 <td>@item.Description</td>
                 <td>@item.CreatedDate</td>
                 <td>
-                    <a href="">Edit</a>
-                    <a href="">Delete</a>
+                    <a href="~/Admin/Category/EditCategory/@item.CategoryId">Edit</a>
+                    <a href="~/Admin/Category/DeleteCategory/@item.CategoryId">Delete</a>
                 </td>
             </tr>
         }
