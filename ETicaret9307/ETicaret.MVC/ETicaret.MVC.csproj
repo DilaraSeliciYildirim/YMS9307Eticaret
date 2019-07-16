@@ -132,6 +132,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BrandController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Models\ResultModel\InstanceResult.cs" />
     <Compile Include="Global.asax.cs">
@@ -182,6 +183,8 @@
     <Content Include="Areas\Admin\Views\Category\List.cshtml" />
     <Content Include="Areas\Admin\Views\Category\AddCategory.cshtml" />
     <Content Include="Areas\Admin\Views\Category\EditCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\BrandList.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\AddBrand.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -193,6 +196,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
