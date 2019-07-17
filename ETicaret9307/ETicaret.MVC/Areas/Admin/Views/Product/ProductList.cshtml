@@ -1,0 +1,40 @@
+﻿@using ETicaret.Entity
+@model List<Product>
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProductList</h2>
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>ProductName</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Category</th>
+            <th>Brand</th>
+            <th>Photo</th>
+            <th>Edit & Delete </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product item in Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Price</td>
+                <td>@item.Stock</td>
+                <td>@item.Category.CategoryName</td>
+                <td>@item.Brand.BrandName</td>
+                <td>
+                    <img src="~/Images/@item.Photo" width="75" height="75"/>
+                </td>
+                <td>
+                    <a href="">Edit</a>
+                    <a href="">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
