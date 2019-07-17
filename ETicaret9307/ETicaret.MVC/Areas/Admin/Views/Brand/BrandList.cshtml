@@ -6,6 +6,9 @@
 }
 
 <h2>BrandList</h2>
+<div class="text-danger">
+    @ViewBag.deleteMesaj
+</div>
 <table border="1" class="table table-hover">
     <thead>
         <tr>
@@ -22,11 +25,12 @@
                 <td>@item.BrandName</td>
                 <td>@item.Description</td>
                 <td>
-                    <img src="~/Images/@item.Photo" class="img-circle" width="75" height="75" />
+                    <center><img src="~/Images/@item.Photo" class="img-circle" width="75" height="75" /> </center>
+                    
                 </td>
                 <td>
-                    <a href="">Edit</a>
-                    <a href="">Delete</a>
+                    <a href="~/Admin/Brand/EditBrand/@item.BrandId">Edit</a>
+                    <a href="~/Admin/Brand/DeleteBrand/@item.BrandId">Delete</a>
                 </td>
             </tr>
         }

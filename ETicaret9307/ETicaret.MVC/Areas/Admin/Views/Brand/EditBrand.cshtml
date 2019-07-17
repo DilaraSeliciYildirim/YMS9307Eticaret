@@ -1,0 +1,28 @@
+﻿@using ETicaret.Entity
+@model Brand
+@{
+    ViewBag.Title = "EditBrand";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditBrand</h2>
+<form action="~/Admin/Brand/EditBrand" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="BrandId" value="@Model.BrandId" />
+    <input type="hidden" name="Photo" value="@Model.Photo" />
+
+    <div class="form-group" style="width:300px">
+        <label> Brand Name</label>
+        <input type="text" name="BrandName" value="@Model.BrandName" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Brand Description</label>
+        <input type="text" name="Description" value="@Model.Description" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Brand Photo</label>
+        <img src="~/Images/@Model.Photo" width="75" height="75"/>
+        <input type="file" name="Photo" />
+    </div>
+    <button class="btn btn-primary" type="submit">Update Brand</button>
+</form>
