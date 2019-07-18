@@ -1,0 +1,51 @@
+﻿@using ETicaret.Entity
+@using ETicaret.MVC.Areas.Admin.Models.ProductVM
+@model ProductViewModel
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddProduct</h2>
+<form action="~/Admin/Product/AddProduct" method="post" enctype="multipart/form-data">
+
+    <div class="form-group" style="width:300px">
+        <label>Product Name</label>
+        <input type="text" name="ProductName" class="form-control"/>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Price</label>
+        <input type="number" name="Price" class="form-control"/>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Stock</label>
+        <input type="number" name="Stock" class="form-control"/>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label> Category Name</label>
+        <select class="form-control" name="CategoryId">
+            <option> Select a proper Category</option>
+            @foreach (Category item in Model.CatList)
+            {
+                <option value="@item.CategoryId"> @item.CategoryName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Brand Name</label>
+        <select class="form-control" name="BrandId">
+            <option>Select proper Brand</option>
+            @foreach (Brand item in Model.BrandList)
+            {
+                <option value="@item.BrandId">@item.BrandName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Product Photo</label>
+        <input type="file" name="Photo" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <button class="btn btn-success" type="submit">Add Product</button>
+    </div>
+</form>

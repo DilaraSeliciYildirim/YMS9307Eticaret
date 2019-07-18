@@ -1,0 +1,58 @@
+﻿@using ETicaret.Entity
+@using ETicaret.MVC.Areas.Admin.Models.ProductVM
+@model ProductViewModel
+@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditProduct</h2>
+<form action="~/Admin/Product/EditProduct" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" name="ProductId" value="@Model.Product.ProductId" />
+    <input type="hidden" name="Photo" value="@Model.Product.Photo" />
+
+    <div class="form-group" style="width:300px">
+        <label>Product Name</label>
+        <input type="text" name="ProductName" value="@Model.Product.ProductName" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Price</label>
+        <input type="text" name="Price" value="@Model.Product.Price"class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Stock</label>
+        <input type="number" name="Stock" value="@Model.Product.Stock" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label> Category Name</label>
+        <select class="form-control" name="CategoryId">
+            <option value="@Model.Product.CategoryId"> @Model.Product.Category.CategoryName</option>
+            @foreach (Category item in Model.CatList)
+            {
+                <option value="@item.CategoryId"> @item.CategoryName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Brand Name</label>
+        <select class="form-control" name="BrandId">
+            <option value="@Model.Product.BrandId">@Model.Product.Brand.BrandName</option>
+            @foreach (Brand item in Model.BrandList)
+            {
+                <option value="@item.BrandId">@item.BrandName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Product Photo</label>
+        <img src="~/Images/@Model.Product.Photo" width="75" height="75" />
+        <input type="file" name="Photo" />
+        <div class="text-danger">
+            @TempData["PhotoExtensionError"]
+        </div>
+    </div>
+    <div class="form-group" style="width:300px">
+        <button class="btn btn-success" type="submit">Update Product</button>
+    </div>
+</form>
