@@ -1,0 +1,38 @@
+﻿@using ETicaret.Entity
+@model List<Member>
+@{
+    ViewBag.Title = "MemberList";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MemberList</h2>
+<table border="1" class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>UserRole</th>
+            <th>Edit & Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Member item in Model)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Address</td>
+                <td>@item.Email</td>
+                <td>@item.Password</td>
+                <td>@item.UserRole.RoleName</td>
+                <td>
+                    <a href="~/Admin/Member/EditMember/@item.UserId">Edit</a>
+                    <a href="~/Admin/Member/DeleteMember/@item.UserId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

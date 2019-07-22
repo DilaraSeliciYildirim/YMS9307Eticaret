@@ -134,6 +134,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MemberController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Models\ProductVM\ProductViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ResultModel\InstanceResult.cs" />
@@ -191,6 +192,8 @@
     <Content Include="Areas\Admin\Views\Product\ProductList.cshtml" />
     <Content Include="Areas\Admin\Views\Product\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Product\EditProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\MemberList.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\AddMember.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

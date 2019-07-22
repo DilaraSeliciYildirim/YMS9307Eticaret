@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "AddMember";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddMember</h2>
+<div class="text-danger">
+    @ViewBag.mesajUye
+</div>
+<form action="~/Admin/Member/AddMember" method="post">
+    <div class="form-group" style="width:300px">
+        <label>FirstName</label>
+        <input type="text" name="FirstName" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>LastName</label>
+        <input type="text" name="LastName" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Address</label>
+        <input type="text" name="Address" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Email</label>
+        <input type="text" name="Email" class="form-control" />
+    </div>
+    <div class="text-danger">
+        @ViewBag.mesajPassword
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Password</label>
+        <input type="text" name="Password" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Password Again</label>
+        <input type="text" name="confirm" class="form-control" />
+    </div>
+    <button class="btn btn-primary" type="submit"> Add Member</button>
+
+</form>
