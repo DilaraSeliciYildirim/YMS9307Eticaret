@@ -1,0 +1,43 @@
+﻿@using ETicaret.Entity
+@model Member
+@{
+    ViewBag.Title = "EditMember";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditMember</h2>
+<form action="~/Admin/Member/EditMember" method="post">
+    <input type="hidden" name="UserId" value="@Model.UserId" />
+    <input type="hidden" name="Password" value="@Model.Password" />
+    <div class="form-group" style="width:300px">
+        <label>FirstName</label>
+        <input type="text" name="FirstName" value="@Model.FirstName" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>LastName</label>
+        <input type="text" name="LastName" value="@Model.LastName" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Address</label>
+        <input type="text" name="Address" value="@Model.Address" class="form-control" />
+    </div>
+    <div class="text-danger">
+        @ViewBag.HataPassword
+        @ViewBag.OldPasswordWrong
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Old Password</label>
+        <input type="text" name="oldPassword" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>New Password</label>
+        <input type="text" name="newPassword" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Password Again</label>
+        <input type="text" name="confirm" class="form-control" />
+    </div>
+    <button class="btn btn-primary" type="submit"> Update Member</button>
+
+</form>
+

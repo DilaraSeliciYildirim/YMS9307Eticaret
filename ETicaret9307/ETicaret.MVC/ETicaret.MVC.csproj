@@ -194,6 +194,7 @@
     <Content Include="Areas\Admin\Views\Product\EditProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Member\MemberList.cshtml" />
     <Content Include="Areas\Admin\Views\Member\AddMember.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\EditMember.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
