@@ -8,7 +8,7 @@ using ETicaret.Entity;
 
 namespace ETicaret.Repository
 {
-    public class ProductRepository : DataRepository<Product, int>
+    public class ProductRepository : DataRepository<Product, int>,GetLatestObject<Product>
     {
         public static ECommerceEntities db = new ECommerceEntities();
         ResultProcess<Product> result = new ResultProcess<Product>();
@@ -17,6 +17,13 @@ namespace ETicaret.Repository
             Product silinecek = db.Products.SingleOrDefault(t => t.ProductId == id);
             db.Products.Remove(silinecek);
             return result.GetResult(db);
+        }
+
+        public Result<List<Product>> GetLatestObjects(int Quantity)
+        {
+            return result.GetListResult(db.Products.OrderByDescending(t => t.ProductId).Take(Quantity).ToList());
+
+            //Product'ları ProductId'si en büyük olandan küçüğe doğru sıralattık. En tepede son eklenen ürünler oldu. Bu ürünlerden Quantity kadarını listeye attık.
         }
 
         public override Result<Product> GetObjById(int id)
