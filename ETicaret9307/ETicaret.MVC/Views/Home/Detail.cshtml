@@ -1,0 +1,32 @@
+﻿@using ETicaret.Entity
+@model Product
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Detail</h2>
+<div class="prod_box_big">
+    <div class="top_prod_box_big"></div>
+    <div class="center_prod_box_big">
+        <div class="product_img_big">
+            <a href="javascript:popImage('~/Images/@Model.Photo','Some Title')" title="header=[Zoom] body=[&nbsp;] fade=[on]">
+            <img src="~/Images/@Model.Photo" alt="" border="0" width="100" height="100"/>
+            </a>
+        </div>
+        <div class="details_big_box">
+            <div class="product_title_big">@Model.ProductName</div>
+            <div class="specifications">
+                Stock: <span class="blue">@Model.Stock</span><br />
+                Garantie: <span class="blue">24 luni</span><br />
+                Category: <span class="blue">@Model.Category.CategoryName</span><br />
+                Brand: <span class="blue">@Model.Brand.BrandName</span><br />
+            </div>
+            <div class="prod_price_big"> <span class="price">@Model.Price ₺</span></div>
+            <a href="#" class="addtocart">add to cart</a> 
+           
+        </div>
+    </div>
+    <div class="bottom_prod_box_big"></div>
+</div>
+

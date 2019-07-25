@@ -13,6 +13,7 @@
         <![endif]-->
     @*<script type="text/javascript" src="js/boxOver.js"></script>*@
     <script src="~/Content/electronix/js/boxOver.js"></script>
+    <script src="~/Content/electronix/js/windowopen.js"></script>
 </head>
 <body>
     <div id="main_container">
@@ -52,7 +53,7 @@
                 <ul class="menu">
                     <li><a href="#" class="nav1"> Home</a></li>
                     <li class="divider"></li>
-                    <li><a href="#" class="nav2">Products</a></li>
+                    <li><a href="~/Home/ListAllProduct" class="nav2">Products</a></li>
                     <li class="divider"></li>
                     <li><a href="#" class="nav3">Specials</a></li>
                     <li class="divider"></li>
@@ -98,12 +99,12 @@
                         {
                             if (sayac % 2 == 0)
                             {
-                                <li class="even"><a href="#">@item.CategoryName </a></li>
+                                <li class="even"><a href="~/Home/GetProductByCatId/@item.CategoryId">@item.CategoryName </a></li>
                                 sayac++;
                             }
                             else
                             {
-                                <li class="odd"><a href="#">@item.CategoryName </a></li>
+                                <li class="odd"><a href="~/Home/GetProductByCatId/@item.CategoryId">@item.CategoryName </a></li>
                                 sayac++;
                             }
                         }
@@ -156,7 +157,7 @@
                     <div class="product_img"><a href="details.html"><img src="images/p2.gif" alt="" border="0" /></a></div>
                     <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
                 </div>
-                <div class="title_box">Manufacturers</div>
+                <div class="title_box">Brands</div>
                 <ul class="left_menu">
                     @*<li class="odd"><a href="#">Sony</a></li>
         <li class="even"><a href="#">Samsung</a></li>
@@ -173,12 +174,12 @@
                         {
                             if (sayac1 % 2 == 1)
                             {
-                                <li class="odd"><a href="#">@item.BrandName</a></li>
+                                <li class="odd"><a href="~/Home/GetProductByBrandId/@item.BrandId">@item.BrandName</a></li>
                                 sayac1++;
                             }
                             else
                             {
-                                <li class="even"><a href="#">@item.BrandName</a></li>
+                                <li class="even"><a href="~/Home/GetProductByBrandId/@item.BrandId">@item.BrandName</a></li>
                                 sayac1++;
                             }
                         }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ETicaret.Repository;
+using ETicaret.Entity;
 
 namespace ETicaret.MVC.Controllers
 {
@@ -12,9 +13,36 @@ namespace ETicaret.MVC.Controllers
         // GET: Home
 
         ProductRepository pr = new ProductRepository();
-        public ActionResult Index()
+        public ActionResult Index() // Ana Sayfa
         {
             return View(pr.GetLatestObjects(5).ProcessResult);
+        }
+
+        // Soldaki kategori menüsündeki kategori isimlerine tıkladığımızda o kategorideki ürünleri getiren metod.
+        public ActionResult GetProductByCatId(Guid id)
+        {
+            List<Product> ProList = ProductRepository.db.Products.Where(t => t.CategoryId == id).ToList();
+
+            // var PList = pr.List().ProcessResult.Where(t => t.CategoryId == id).ToList();
+
+            return View(ProList);
+        }
+        // Sağdaki brand menüsündeki brand isimlerine tıkladığımızda o brand'e ait olan ürünleri getiren metod.
+        public ActionResult GetProductByBrandId(int id)
+        {
+            List<Product> Prolist = ProductRepository.db.Products.Where(t => t.BrandId == id).ToList();
+
+            return View(Prolist);
+        }
+
+        public ActionResult ListAllProduct()
+        {
+            return View(pr.List().ProcessResult);
+        }
+
+        public ActionResult Detail(int id)
+        {
+            return View(pr.GetObjById(id).ProcessResult);
         }
     }
 }

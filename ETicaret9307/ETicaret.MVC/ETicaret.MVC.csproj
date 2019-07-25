@@ -272,6 +272,10 @@
     <Content Include="Views\Shared\_UserLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_ProductList.cshtml" />
+    <Content Include="Views\Home\GetProductByCatId.cshtml" />
+    <Content Include="Views\Home\GetProductByBrandId.cshtml" />
+    <Content Include="Views\Home\ListAllProduct.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
