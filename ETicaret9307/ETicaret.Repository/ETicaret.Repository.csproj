@@ -51,8 +51,11 @@
     <Compile Include="BrandRepository.cs" />
     <Compile Include="CategoryRepository.cs" />
     <Compile Include="DataRepository.cs" />
+    <Compile Include="DeleteObjectByTwoId.cs" />
     <Compile Include="GetLatestObject.cs" />
     <Compile Include="MemberRepository.cs" />
+    <Compile Include="OrderDetailRepository.cs" />
+    <Compile Include="OrderRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
