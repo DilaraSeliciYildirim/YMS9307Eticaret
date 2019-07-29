@@ -211,6 +211,7 @@
     <Compile Include="Areas\Admin\Models\ProductVM\ProductViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ResultModel\InstanceResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -287,6 +288,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Eticaret.Common\Eticaret.Common.csproj">
