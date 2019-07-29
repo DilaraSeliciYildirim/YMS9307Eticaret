@@ -8,7 +8,7 @@ using Eticaret.Common;
 
 namespace ETicaret.Repository
 {
-    public class OrderDetailRepository : DataRepository<OrderDetail, int>, DeleteObjectByTwoId<int> //OrderId'yi
+    public class OrderDetailRepository : DataRepository<OrderDetail, int>, DeleteObjectByTwoId<int>, GetObjectByTwoId<OrderDetail> //OrderId'yi
     {
         public static ECommerceEntities db = Tool.GetConnection();
         ResultProcess<OrderDetail> result = new ResultProcess<OrderDetail>();
@@ -32,19 +32,39 @@ namespace ETicaret.Repository
             throw new NotImplementedException();
         }
 
+        public Result<OrderDetail> GetObjectByTwoId(int Id1, int Id2) //Id1=OrderId, Id2=ProductId
+        {
+            OrderDetail od = db.OrderDetails.SingleOrDefault(t => t.OrderId == Id1 && t.ProductId == Id2);
+
+            return result.GetT(od);
+        }
+
         public override Result<int> Insert(OrderDetail item)
         {
-            throw new NotImplementedException();
+            OrderDetail newOD = db.OrderDetails.Create();
+            newOD.ProductId = item.ProductId;
+            newOD.OrderId = item.OrderId;
+            newOD.Price = item.Price;
+            newOD.Quantity = item.Quantity;
+
+            db.OrderDetails.Add(newOD);
+            return result.GetResult(db);
+            
         }
 
         public override Result<List<OrderDetail>> List()
         {
-            throw new NotImplementedException();
+            return result.GetListResult(db.OrderDetails.ToList());
         }
 
         public override Result<int> Update(OrderDetail item)
         {
-            throw new NotImplementedException();
+            OrderDetail od = GetObjectByTwoId(item.OrderId, item.ProductId).ProcessResult;
+
+            od.Price = item.Price;
+            od.Quantity = item.Quantity;
+
+            return result.GetResult(db);
         }
     }
 }
