@@ -58,5 +58,65 @@ namespace ETicaret.MVC.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult DetailPage()
+        {
+            if (Session["Order"]!=null)
+            {
+                Order sepetim = (Order)Session["Order"];
+                decimal? totalPrice = 0;
+                foreach (OrderDetail item in sepetim.OrderDetails)
+                {
+                    totalPrice += item.Price;
+                }
+
+                sepetim.TotalPrice = totalPrice;
+                or.Update(sepetim);
+
+                return View(sepetim.OrderDetails);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+                //Bir order yoksa alışveriş butonuna basıldığında bi işlem olmayacaktır.
+            }
+        }
+
+        public ActionResult QuantityArttir(int id)
+        {
+            Order sepetim = (Order)Session["Order"];
+            OrderDetail sepettekiOrd = odr.GetObjectByTwoId(sepetim.OrderId, id).ProcessResult;
+
+            sepettekiOrd.Quantity++;
+            sepettekiOrd.Price += pr.GetObjById(id).ProcessResult.Price;
+            odr.Update(sepettekiOrd);
+            return RedirectToAction("DetailPage");
+        }
+
+        public ActionResult QuantityAzalt(int id)
+        {
+            Order sepetim = (Order)Session["Order"];
+            OrderDetail sepettekiOrd = odr.GetObjectByTwoId(sepetim.OrderId, id).ProcessResult;
+
+            if (sepettekiOrd.Quantity >1)
+            {
+                sepettekiOrd.Quantity--;
+                sepettekiOrd.Price -= pr.GetObjById(id).ProcessResult.Price;
+                odr.Update(sepettekiOrd);
+                return RedirectToAction("DetailPage");
+            }
+            else
+            {
+                return RedirectToAction("Delete", new { @ID = id });
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            Order sepetim = (Order)Session["Order"];
+            odr.DeleteObjects(sepetim.OrderId, id);
+
+            return RedirectToAction("DetailPage");
+        }
     }
 }

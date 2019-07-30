@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "DetailPage";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@using ETicaret.Entity
+@model ICollection<OrderDetail>
+<h2>DetailPage</h2>
+<table class="table table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>OrderId</th>
+            <th>ProductName</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Change Quantity</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (OrderDetail item in Model)
+        {
+            <tr>
+                <td>@item.OrderId</td>
+                <td>@item.Product.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+                <td>
+                    <a href="~/Order/QuantityArttir/@item.ProductId" class="btn btn-success">Arttır</a>
+                    <a href="~/Order/QuantityAzalt/@item.ProductId" class="btn btn-danger">Azalt</a>
+                </td>
+                <td>
+                    <a href="~/Order/Delete/@item.ProductId">Delete</a>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="6">
+                @{ 
+                    Order sepetim = (Order)Session["Order"];
+                    <span> Total: </span>@sepetim.TotalPrice @:₺
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a href="" class="btn btn-success"> Ödeme Adımı</a>

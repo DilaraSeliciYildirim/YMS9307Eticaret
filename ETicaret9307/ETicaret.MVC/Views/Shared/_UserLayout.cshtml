@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>HepsiSurada! @ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
     @*<link rel="stylesheet" type="text/css" href="style.css" />*@
     <link href="~/Content/electronix/style.css" rel="stylesheet" />
@@ -146,16 +147,47 @@
                 <div class="shopping_cart">
                     <div class="cart_title">Shopping cart</div>
                     <div class="cart_details">
-                        3 items <br />
-                        <span class="border_cart"></span> Total: <span class="price">350$</span>
+                        @{ 
+                            Order sepetim = (Order)(Session["Order"]);
+                            int? adet = 0;
+                            decimal? totalPrice = 0;
+
+                            if (sepetim != null)
+                            {
+                                foreach (OrderDetail item in sepetim.OrderDetails)
+                                {
+                                    adet += item.Quantity;
+                                    totalPrice += item.Price;
+                                }
+                            }
+
+                        }
+                         <label> @adet ürün </label>
+                         <br />
+                        <span class="border_cart"></span> Total: <span class="price">@totalPrice ₺ </span>
                     </div>
-                    <div class="cart_icon"><a href="#" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="~/Content/electronix/images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
+
+                    <div class="cart_icon">
+                    <a href="~/Order/DetailPage" title="header=[Checkout] body=[&nbsp;] fade=[on]">
+                        <img src="~/Content/electronix/images/shoppingcart.png" alt="" width="48" height="48" border="0" />
+                        </a></div>
                 </div>
                 <div class="title_box">What’s new</div>
-                <div class="border_box">s
-                    <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
-                    <div class="product_img"><a href="details.html"><img src="images/p2.gif" alt="" border="0" /></a></div>
-                    <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+                @{ 
+                    ProductRepository pr = new ProductRepository();
+                    Product latestPro = pr.GetLatestObjects(1).ProcessResult.SingleOrDefault();
+
+                }
+                <div class="border_box">
+                    <div class="product_title">
+                    <a href="~/Home/Detail/@latestPro.ProductId">@latestPro.ProductName</a>
+                    </div>
+                    <div class="product_img">
+                    <a href="~/Home/Detail/@latestPro.ProductId">
+                        <img src="~/Images/@latestPro.Photo" alt="" border="0" width="90" height="90" />
+                        </a>
+                    </div>
+                    <div class="prod_price"> <span class="price">@latestPro.Price ₺</span></div>
                 </div>
                 <div class="title_box">Brands</div>
                 <ul class="left_menu">
