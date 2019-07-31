@@ -13,8 +13,9 @@ namespace ETicaret.MVC.Controllers
         // GET: Home
 
         ProductRepository pr = new ProductRepository();
-        public ActionResult Index() // Ana Sayfa
+        public ActionResult Index(string paymentMesaj) // Ana Sayfa
         {
+            ViewBag.payment = paymentMesaj;
             return View(pr.GetLatestObjects(5).ProcessResult);
         }
 
