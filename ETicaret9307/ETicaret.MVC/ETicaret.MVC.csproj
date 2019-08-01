@@ -207,6 +207,8 @@
     <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\raphael.min.js" />
     <Content Include="Content\startbootstrap-sb-admin-gh-pages\tables.html" />
     <Content Include="Global.asax" />
+    <Content Include="MyScripts\ErrorMessages.js" />
+    <Content Include="MyScripts\main.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

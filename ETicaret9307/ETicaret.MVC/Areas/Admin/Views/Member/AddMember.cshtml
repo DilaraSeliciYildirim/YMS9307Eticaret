@@ -8,7 +8,7 @@
 <div class="text-danger">
     @ViewBag.mesajUye
 </div>
-<form action="~/Admin/Member/AddMember" method="post">
+<form action="~/Admin/Member/AddMember" id="js-add-member-form" method="post">
     <div class="form-group" style="width:300px">
         <label>FirstName</label>
         <input type="text" name="FirstName" class="form-control" />
@@ -30,7 +30,7 @@
     </div>
     <div class="form-group" style="width:300px">
         <label>Password</label>
-        <input type="text" name="Password" class="form-control" />
+        <input type="text" name="Password" id="js-input-password" class="form-control" />
     </div>
     <div class="form-group" style="width:300px">
         <label>Password Again</label>
